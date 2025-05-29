@@ -1,0 +1,150 @@
+ubuntu ubuntu   40 May 29  2025 Downloads/
+drwx------  2 ubuntu ubuntu   80 May 29 02:42 .gnupg/
+drwx------  2 ubuntu ubuntu   40 May 29  2025 .gvfs/
+drwx------  4 ubuntu ubuntu   80 May 29  2025 .local/
+drwxr-xr-x  2 ubuntu ubuntu   40 May 29  2025 Music/
+drwxr-xr-x  2 ubuntu ubuntu   40 May 29  2025 Pictures/
+-rw-r--r--  1 ubuntu ubuntu  807 May 29  2025 .profile
+drwxr-xr-x  2 ubuntu ubuntu   40 May 29  2025 Public/
+drwx------  4 ubuntu ubuntu   80 May 29 02:41 snap/
+drwx------  2 ubuntu ubuntu   40 May 29 02:42 .ssh/
+-rw-r--r--  1 ubuntu ubuntu    0 May 29  2025 .sudo_as_admin_successful
+drwxr-xr-x  2 ubuntu ubuntu   40 May 29  2025 Templates/
+drwxr-xr-x  2 ubuntu ubuntu   40 May 29  2025 Videos/
+ubuntu@ubuntu:~$ ls
+Desktop  Documents  Downloads  Music  Pictures  Public  snap  Templates  Videos
+ubuntu@ubuntu:~$ mkdir testdir
+ubuntu@ubuntu:~$ cd testdir
+ubuntu@ubuntu:~/testdir$ touch example.txt
+ubuntu@ubuntu:~/testdir$ mv example.txt renamed_example.txt
+ubuntu@ubuntu:~/testdir$ ls
+renamed_example.txt
+ubuntu@ubuntu:~/testdir$ echo "hi  this my first project " > renamed_example.txt
+ubuntu@ubuntu:~/testdir$ cat renamed_example.txt
+hi  this my first project 
+ubuntu@ubuntu:~/testdir$ echo "line -2 hi " >> renamed_example.txt
+ubuntu@ubuntu:~/testdir$ cat renamed_example.txt
+hi  this my first project 
+line -2 hi 
+ubuntu@ubuntu:~/testdir$ echo "hi  this my first project " >> renamed_example.txt
+ubuntu@ubuntu:~/testdir$ cat renamed_example.txt
+hi  this my first project 
+line -2 hi 
+hi  this my first project 
+ubuntu@ubuntu:~/testdir$ echo"^V^V^V^M " >> renamed_example.txt
+ : command not found
+ubuntu@ubuntu:~/testdir$ echo "^V^V^V^M " >> renamed_example.txt
+ubuntu@ubuntu:~/testdir$ echo fdvnrh"^V^V^V^M " >> renamed_example.txt
+ubuntu@ubuntu:~/testdir$ echo "abhi na  " >> renamed_example.txt
+ubuntu@ubuntu:~/testdir$ echo "abhi njao a  " >> renamed_example.txt
+ubuntu@ubuntu:~/testdir$ cat renamed_example.txt
+hi  this my first project 
+line -2 hi 
+hi  this my first project 
+ 
+ dvnrh
+abhi na  
+abhi njao a  
+ubuntu@ubuntu:~/testdir$ head n -5 renamed_example.txt
+head: invalid trailing option -- 5
+Try 'head --help' for more information.
+ubuntu@ubuntu:~/testdir$ head -n 5 renamed_example.txt
+hi  this my first project 
+line -2 hi 
+hi  this my first project 
+ 
+ dvnrh
+ubuntu@ubuntu:~/testdir$ tail -n 5 renamed_example.txt
+hi  this my first project 
+ 
+ dvnrh
+abhi na  
+abhi njao a  
+ubuntu@ubuntu:~/testdir$ grep "first" renamed_example.txt
+hi  this my first project 
+hi  this my first project 
+ubuntu@ubuntu:~/testdir$ zip -r testdir.zip testdir
+	zip warning: name not matched: testdir
+
+zip error: Nothing to do! (try: zip -r testdir.zip . -i testdir)
+ubuntu@ubuntu:~/testdir$ ^C
+ubuntu@ubuntu:~/testdir$ zip -r testdir.zip . -i testdir
+	zip warning: zip file empty
+ubuntu@ubuntu:~/testdir$ cd ..
+ubuntu@ubuntu:~$ zip -r testdir.zip testdir
+  adding: testdir/ (stored 0%)
+  adding: testdir/renamed_example.txt (deflated 33%)
+  adding: testdir/testdir.zip (stored 0%)
+ubuntu@ubuntu:~$ mkdir unzipped_dir
+ubuntu@ubuntu:~$ unzip testdir.zip -d unzipped_dir
+Archive:  testdir.zip
+   creating: unzipped_dir/testdir/
+  inflating: unzipped_dir/testdir/renamed_example.txt  
+ extracting: unzipped_dir/testdir/testdir.zip  
+ubuntu@ubuntu:~$ 
+ubuntu@ubuntu:~$ wget<google.com>
+bash: syntax error near unexpected token `newline'
+ubuntu@ubuntu:~$ wget<www.google.com>
+bash: syntax error near unexpected token `newline'
+ubuntu@ubuntu:~$ wget <200~https://www.google.com/>
+bash: syntax error near unexpected token `newline'
+ubuntu@ubuntu:~$ wget <https://www.google.com/search?client=ubuntu-sn&channel=fs&q=txt&sei=2tA3aO7VE4ygvr0P_tC5kAI>
+bash: syntax error near unexpected token `newline'
+ubuntu@ubuntu:~$ touch secure.txt
+ubuntu@ubuntu:~$ ls -l
+total 4
+drwxr-xr-x 2 ubuntu ubuntu  60 May 29  2025 Desktop
+drwxr-xr-x 2 ubuntu ubuntu  40 May 29  2025 Documents
+drwxr-xr-x 2 ubuntu ubuntu  40 May 29  2025 Downloads
+drwxr-xr-x 2 ubuntu ubuntu  40 May 29  2025 Music
+drwxr-xr-x 2 ubuntu ubuntu  40 May 29  2025 Pictures
+drwxr-xr-x 2 ubuntu ubuntu  40 May 29  2025 Public
+-rw-rw-r-- 1 ubuntu ubuntu   0 May 29 03:14 secure.txt
+drwx------ 6 ubuntu ubuntu 120 May 29 03:05 snap
+drwxr-xr-x 2 ubuntu ubuntu  40 May 29  2025 Templates
+drwxrwxr-x 2 ubuntu ubuntu  80 May 29 03:00 testdir
+-rw-rw-r-- 1 ubuntu ubuntu 608 May 29 03:00 testdir.zip
+drwxrwxr-x 3 ubuntu ubuntu  60 May 29 03:03 unzipped_dir
+drwxr-xr-x 2 ubuntu ubuntu  40 May 29  2025 Videos
+ubuntu@ubuntu:~$ sudo chmod 777 secure.txt
+ubuntu@ubuntu:~$ ls
+Desktop    Downloads  Pictures  secure.txt  Templates  testdir.zip   Videos
+Documents  Music      Public    snap        testdir    unzipped_dir
+ubuntu@ubuntu:~$ ll
+total 16
+drwxr-x--- 19 ubuntu ubuntu  500 May 29 03:14 ./
+drwxr-xr-x  1 root   root     80 May 29  2025 ../
+-rw-r--r--  1 ubuntu ubuntu  220 May 29  2025 .bash_logout
+-rw-r--r--  1 ubuntu ubuntu 3771 May 29  2025 .bashrc
+drwx------ 10 ubuntu ubuntu  220 May 29 02:42 .cache/
+drwxr-xr-x 13 ubuntu ubuntu  420 May 29 03:08 .config/
+drwxr-xr-x  2 ubuntu ubuntu   60 May 29  2025 Desktop/
+drwxr-xr-x  2 ubuntu ubuntu   40 May 29  2025 Documents/
+drwxr-xr-x  2 ubuntu ubuntu   40 May 29  2025 Downloads/
+drwx------  2 ubuntu ubuntu   80 May 29 02:42 .gnupg/
+drwx------  2 ubuntu ubuntu   40 May 29  2025 .gvfs/
+drwx------  4 ubuntu ubuntu   80 May 29  2025 .local/
+drwxr-xr-x  2 ubuntu ubuntu   40 May 29  2025 Music/
+drwxr-xr-x  2 ubuntu ubuntu   40 May 29  2025 Pictures/
+-rw-r--r--  1 ubuntu ubuntu  807 May 29  2025 .profile
+drwxr-xr-x  2 ubuntu ubuntu   40 May 29  2025 Public/
+-rwxrwxrwx  1 ubuntu ubuntu    0 May 29 03:14 secure.txt*
+drwx------  6 ubuntu ubuntu  120 May 29 03:05 snap/
+drwx------  2 ubuntu ubuntu   40 May 29 02:42 .ssh/
+-rw-r--r--  1 ubuntu ubuntu    0 May 29  2025 .sudo_as_admin_successful
+drwxr-xr-x  2 ubuntu ubuntu   40 May 29  2025 Templates/
+drwxrwxr-x  2 ubuntu ubuntu   80 May 29 03:00 testdir/
+-rw-rw-r--  1 ubuntu ubuntu  608 May 29 03:00 testdir.zip
+drwxrwxr-x  3 ubuntu ubuntu   60 May 29 03:03 unzipped_dir/
+drwxr-xr-x  2 ubuntu ubuntu   40 May 29  2025 Videos/
+ubuntu@ubuntu:~$ export MY_VAR = "Hello Linux!"
+bash: export: `=': not a valid identifier
+bash: export: `Hello Linux!': not a valid identifier
+ubuntu@ubuntu:~$ export MY_VAR="Hello Linux!"
+ubuntu@ubuntu:~$ export MY_VAR = "Hello Linux!"
+bash: export: `=': not a valid identifier
+bash: export: `Hello Linux!': not a valid identifier
+ubuntu@ubuntu:~$ export MY_VAR="Hello Linux!"
+ubuntu@ubuntu:~$ echo $MY_VAR
+Hello Linux!
+ubuntu@ubuntu:~$ 
